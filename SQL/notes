@@ -1,0 +1,59 @@
+1.SQL
+  a.it's a language
+  b.A database is a collection of infos
+  c.examples: Phone book, your 5 best friends, facebook's user base
+  d.there is alot of places to store databases
+  e.examples: computers, your mind, paper
+  f.computers are the best environement for databases.(size/security/etc...)
+  g.we manage data we use DBMS (Database Management systems),creat/read/update/delete
+  h.CRUD stands for Creat/Read/Update/Delete infos/data in the database
+  i.types of databases:
+    1.relational Databases (SQL) and it's the most popualre one, it's like a excel sheet !it uses tables
+    2.Non-Relational(no SQL) the oppiste of RElational
+  j.an example of Realtional Databases
+   ----------------------------------------------------------------------
+        Username:       Password:      Email:
+
+        Ahmed           123456789      Ahmed@gmail.com 
+        amina           sfgsfdgdf      amina@gmail.com
+        salah           5d4fgdfg      salah@gmail.com
+        fati           sdfgd4fgd54      fati@gmail.com
+-------------------------------------------------------------------------------
+   k.for a Relational Databases, we nees RDBMS like MYSQL, ORACLE, POSTGRESQL
+   l.A non RElational Databeses are any kind of infos but not Tables.
+     1.It could be code, Document,Graphes,text .....
+      2.just Like RDBMS , there NRDBMS 
+   m.queries: are requests to DBMS for specific info! it's pretty much a program
+                that tells DBMS to Grab an info
+     ******************************************last finish at 22:15***************************************************************  
+
+   n.RElational DB:
+     1.tables and keys
+       1.1 tables have columns and rows (lol)
+       1.2 keys: primary keys are an info that used to differentiate between identical infos
+                 example:
+
+
+----------------------------------------------------------------------------------------------------
+student id:                         name:                         major:
+
+24654                               Ahmed                         SVT
+54654                               salikm                        SVT 
+     
+------------------------------------------------------------------------------------------------------
+		    *the primary key here is the STUDENT id, the names and majors are Identical.
+
+    o.types of primary keys:
+       1.natural keys are keys that have meaning in the Real world such as CIN or Social Security number; simply they are used in other places than Database 
+       2.sugorat keys are the opposite, these keys are only meaningful in the database, they are made up for the seul purpose of being in the database
+       3.foreign keys are keys that link >2 tables ! it provide us with infos from another table
+*******************************************************last finish 36:18************************************************************************
+ 
+
+ 
+
+
+
+
+
+
