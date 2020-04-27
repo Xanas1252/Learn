@@ -30,7 +30,7 @@
    n.RElational DB:
      1.tables and keys
        1.1 tables have columns and rows (lol)
-       1.2 keys: primary keys are an info that used to differentiate between identical infos
+       1.2 keys : primary keys are an info that used to differentiate between identical infos or link between tables or define relationships between them(tables)
                  example:
 
 
@@ -38,7 +38,7 @@
 student id:                         name:                         major:
 
 24654                               Ahmed                         SVT
-54654                               salikm                        SVT 
+54654                               ahmed                         SVT 
      
 ------------------------------------------------------------------------------------------------------
 		    *the primary key here is the STUDENT id, the names and majors are Identical.
@@ -48,9 +48,72 @@ student id:                         name:                         major:
        2.sugorat keys are the opposite, these keys are only meaningful in the database, they are made up for the seul purpose of being in the database
        3.foreign keys are keys that link >2 tables ! it provide us with infos from another table
 *******************************************************last finish 36:18************************************************************************
- 
+       4.composite keys are keys that needs 2 attributes 
 
  
+
+--------------------------------------------------------SQL BASICS-------------------------------------------------------------------------------------------
+SQL = Structure Querie Language, it's almost a programming language.
+ 1.it's used to interacte with RDBMS(Relational Database Management system)
+ 2.with SQL we can ask RDMS to do CRUD or preform other helpful tasks
+ 3.not all SQL queries works on all RDBMS, it only needs some small tweeks to work 
+ 4.the concepts are the same but the implementations vary
+ 5.SQL is Hyprid ! it's 4 languages in 1 
+   1.the four languages are DDL DQL DML DCL 
+ 
+
+-------------------------------------------------Queries------------------------------------------------------------------------------------------------------
+1.Queries are set of steps written in SQL with the goal to retriev some specific data
+
+****************************************************finishes at 1 hour************************************************************
+A.to use mySQL in linux: install mysql server and then type mysql in terminal and it will start
+B.popular commands in sql :
+  1.create database nameofdb; "creat a database"
+  2.show databases; "show all the databases created"
+  3.show tables; "show how many tables in a database"
+  4.use nameofdb; "to use a specific database"
+  5.select databases(); "to know what database is currently in use"
+C.different basic datatypes we can store inside our database; there is few more than these 6; but these are the most common ones
+   1.INT   <!--Whole numbers-->
+   2.DECIMAL <!---->
+   3.VARCHAR(X is a number) <!--you can store an X number of text length-->
+   4.BLOB <!--use to store binary large data! it's usually used for images etc-->
+   5.DATE <!--Date-->
+   6.TIMESTAMP <!--Used to record when an event happend-->
+D.creating tables:
+   1. the first basic querie i wrote is the following:
+        CREATE TABLE phones (phone VARCHAR(10) PRIMARY KEY, color VARCHAR(6), price INT );
+            what the above querie did is the following:
+                       -----------------------------------------------------------------------------------------------
+                        phone                             color                                           price
+                       ------------------------------------------------------------------------------------------------
+  2. a  good command to run is DESCRIBE nameofdatabase; >> this command will tell you all infos about a database
+  3. to delete a table you run, DROP TABLE nameofdatabase;
+  4.to modify database after creating a table we use:
+    4.1 to add a column we use ALTER TABLE nameofdatabase ADD nameofcolumn datatype'INT or DECIMAL etc ...';
+    4.2 to delete a ccolumn we use ALTER TABLE nameofdatabase drop COLUMN nameofcolumn;
+----------------------------------------finished at 1:31:05 ------------------------------------------------------------------------- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
