@@ -93,8 +93,135 @@ D.creating tables:
     4.1 to add a column we use ALTER TABLE nameofdatabase ADD nameofcolumn datatype'INT or DECIMAL etc ...';
     4.2 to delete a ccolumn we use ALTER TABLE nameofdatabase drop COLUMN nameofcolumn;
 ----------------------------------------finished at 1:31:05 ------------------------------------------------------------------------- 
+5. After creating 2 columns above in D.1, we inserted another column which th data:
+         phone            color         price
+ ----------------------------------------------
+       samsung           red           100
+       apple             green         10
+-----------------------------------------------
+ we did that by typing the following sql command:
+
+      INSERT INTO nameoftable VALUES('samsung', 'red', 100);
+      INSERT INTO nameofthetable VALUES('apple', 'green', 10);
+ 
+let's say we don't have a price of one the phones, then we can't just leave it blank just like that,we type the following:
+  INSERT INTO nameoftable(phone, color) VALUES('samsung', 'red');    by this we tell mysql that there is only 2 values and there is no price .
+6.constraints:
+6.1 NOT NULL is used in the create table querie to say that a certain data column can't be null.
+6.2 UNIQUE is used in the creat table querie to say that a certain data in a column cant' be duplicated.
+          example:
+
+CREATE Table class(
+  name VARACHAR(10) NOT NULL,
+  major VARCHAR(20) UNIQUE,
+  Age INT,
+  PRIMARY KEY(major)
+);
+6.3 DEFAULT is used to fill the blank with an already made data in case of not entering it:
+    CREAT TABLE phone(
+    phone VARCHAT(20),
+    color VARCHAT(10),
+    price INT DEFAULT 'unknown', 
+    PRIMARY KEY (phone)
+ 
+);
+
+INSERT INTO phone(phone, color) VALUES('apple', 'red');
+ the table would look like this:
+
+         phone            color         price
+ ----------------------------------------------
+       apple              red         unknown
+-----------------------------------------------
+
+6.4 AUTO_INCREMENT is used to insert numbers in a sequence , meaning that putting it when creating the table in column, it will enter numbers auto starting
+         from 1.2.3 .....
 
 
+******************************************UPDATE AND DELETE*******************************************************************************
+1.update:
+   for this, i created the following table: 
++------+----------+-----------+
+| IMM  | name     | skill     |
++------+----------+-----------+
+| 20   | ASSERARE | MENTALITY |
+| 29   | BAKH     | STRENGTH  |
+| 20   | HANAFI   | DRIBBLING |
+| 6    | RIFA3I   | SPEED     |
+| 5    | ZOUBAIR  | COURAGE   |
++------+----------+-----------+
+let's say i wanna change/update the skills of one the guys, we do the following:
+ 
+
+ UPDATE nameofthetable
+ SET skill = 'longsight'
+ WHERE skill = 'SPEED';
+
+
+to become the following:
+
+
++------+----------+-----------+
+| IMM  | name     | skill     |
++------+----------+-----------+
+| 20   | ASSERARE | MENTALITY |
+| 29   | BAKH     | STRENGTH  |
+| 20   | HANAFI   | DRIBBLING |
+| 6    | RIFA3I   | longsight |
+| 5    | ZOUBAIR  | COURAGE   |
++------+----------+-----------+
+
+other creative ways to update:
+
+WHERE IMM = 20; 
+WHERE skill = 'MENTALITY' OR skill = 'COURAGE'; 
+
+
+2.DELETE:
+
+2.1 DELETE FROM WLADDRB; this used to delete the whole tale.
+2.2 DELETE DROM WLADDRB WHERE IMM = 29; this to delete the column where the IMM is 29.
+//////////////////////////////////////////////////////////basic queries /////////////////////////////////////////////////////////////////////////////////
+getting data from the database using RDBMS
+1.SELECT IS A VERY SPECIAL WORD HERE
+2.We used it to display a table using SELECT * FROM table'sname;
+3.we can also grab a specific data using SELECT IMM FROM WLADDRB; giving us the following output:
++------+
+| IMM  |
++------+
+| 20   |
+| 29   |
+| 20   |
+| 6    |
+| 5    |
++------+
+4.we can use ORDER BY name/IMM/skill ASC or DESC; to display the table in order by name or IMM or skill 
+  DESC from last number/character to first
+  DESC from first number/character to last
+
+5. SELECT * FROM table'sname LIMIT 3; limite the output datas to 2.
+6.symboles:
+
+   -- is a comment
+   = equale
+   <> not equale
+   <less then
+   > more then
+   AND 
+   OR
+ 7.SELECT * FROM table'sname WHERE IN ('ASSERARE', 'HANAFI', 'ZOUBAIR'); using IN(......) will only show the names written inside selecting from the table 
+
+
+
+------------------------------------------------done 2:08:36 -----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+ 
 
 
 
