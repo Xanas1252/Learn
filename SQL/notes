@@ -46,7 +46,7 @@ student id:                         name:                         major:
     o.types of primary keys:
        1.natural keys are keys that have meaning in the Real world such as CIN or Social Security number; simply they are used in other places than Database 
        2.sugorat keys are the opposite, these keys are only meaningful in the database, they are made up for the seul purpose of being in the database
-       3.foreign keys are keys that link >2 tables ! it provide us with infos from another table
+       3.foreign keys are keys that link >=2 tables ! it provide us with infos from another table
 *******************************************************last finish 36:18************************************************************************
        4.composite keys are keys that needs 2 attributes 
 
@@ -70,12 +70,12 @@ A.to use mySQL in linux: install mysql server and then type mysql in terminal an
 B.popular commands in sql :
   1.create database nameofdb; "creat a database"
   2.show databases; "show all the databases created"
-  3.show tables; "show how many tables in a database"
+  3.show tables; "show how many tables in a specific database"
   4.use nameofdb; "to use a specific database"
   5.select databases(); "to know what database is currently in use"
 C.different basic datatypes we can store inside our database; there is few more than these 6; but these are the most common ones
    1.INT   <!--Whole numbers-->
-   2.DECIMAL <!---->
+   2.DECIMAL <!--decimal number-->
    3.VARCHAR(X is a number) <!--you can store an X number of text length-->
    4.BLOB <!--use to store binary large data! it's usually used for images etc-->
    5.DATE <!--Date-->
@@ -90,7 +90,7 @@ D.creating tables:
   2. a  good command to run is DESCRIBE nameofdatabase; >> this command will tell you all infos about a database
   3. to delete a table you run, DROP TABLE nameofdatabase;
   4.to modify database after creating a table we use:
-    4.1 to add a column we use ALTER TABLE nameofdatabase ADD nameofcolumn datatype'INT or DECIMAL etc ...';
+    4.1 to add a part in the already existed column we use ALTER TABLE nameofdatabase ADD nameofcolumn datatype'INT or DECIMAL etc ...';
     4.2 to delete a ccolumn we use ALTER TABLE nameofdatabase drop COLUMN nameofcolumn;
 ----------------------------------------finished at 1:31:05 ------------------------------------------------------------------------- 
 5. After creating 2 columns above in D.1, we inserted another column which th data:
@@ -179,7 +179,7 @@ WHERE skill = 'MENTALITY' OR skill = 'COURAGE';
 
 2.DELETE:
 
-2.1 DELETE FROM WLADDRB; this used to delete the whole tale.
+2.1 DELETE FROM WLADDRB; this used to delete the whole table.
 2.2 DELETE DROM WLADDRB WHERE IMM = 29; this to delete the column where the IMM is 29.
 //////////////////////////////////////////////////////////basic queries /////////////////////////////////////////////////////////////////////////////////
 getting data from the database using RDBMS
@@ -197,7 +197,7 @@ getting data from the database using RDBMS
 +------+
 4.we can use ORDER BY name/IMM/skill ASC or DESC; to display the table in order by name or IMM or skill 
   DESC from last number/character to first
-  DESC from first number/character to last
+  ASC from first number/character to last
 
 5. SELECT * FROM table'sname LIMIT 3; limite the output datas to 2.
 6.symboles:
@@ -214,11 +214,62 @@ getting data from the database using RDBMS
 
 
 ------------------------------------------------done 2:08:36 -----------------------------------------------------------------------------------------------
+OK NOW LET'S PLAY A BIT WHITH WHAT WE KNOW!
+I AM GOING TO BE CREATING A TABLE OF PHON'S INVENTORY,
+THIS DATABASE SHOWS HOW MUCH SCREENS/COVERS/AND OTHER SPECS ARE AVAILABLE IN MULTIPLE PHONES'S BRANDS VERSIONS.
+
+i created 3 tables in a database called inventory:
+1.first tables called MAONA and it has phone's brands:
++---------+
+| brands  |
++---------+
+| 1+      |
+| APPLE   |
+| DELL    |
+| GOOGLE  |
+| HP      |
+| HUEWAI  |
+| NEXUS   |
+| OPPO    |
+| SAMSUNG |
+| XAOMI   |
++---------+
+2. the second table is called apple:   
++-----------+---------+--------+-------+
+| version   | screens | covers | specs |
++-----------+---------+--------+-------+
+| IphonX    |       5 |     10 |     0 |
+| Iphon6    |      54 |      0 |    46 |
+| Iphone8   |       2 |     45 |    12 |
+| Iphone S  |      54 |     54 |    12 |
+| Iphone 45 |     346 |     54 |    21 |
++-----------+---------+--------+-------+
+3.third is called samsung:
+
++---------+---------+--------+-------+
+| version | screens | covers | specs |
++---------+---------+--------+-------+
+| S3      |      45 |     45 |     0 |
+| S9      |      16 |    897 |     4 |
+| NOTE9   |       4 |    654 |     5 |
+| NOTE4   |      54 |      5 |    46 |
+| S7      |      54 |     54 |     2 |
++---------+---------+--------+-------+
+
+
+learned doing this:
+
+practiced sql.
+learned to rename a table by using ALTER TABLE nameoftable RENAME TO newtable'sname;
 
 
 
+--------------------------------------------------company databse intro-------------------------------------------------------------------------------------
+in thlis section we are going to make a complicated databes for a company
+ the reason being that we need complex databases with multiple tables that are connected to understand some MYSQL concepts.
 
 
+---------------------------------------------------------02:20:26-----------------------------------------------------------------------------------------
 
 
  
