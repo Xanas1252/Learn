@@ -87,7 +87,7 @@ D.creating tables:
                        -----------------------------------------------------------------------------------------------
                         phone                             color                                           price
                        ------------------------------------------------------------------------------------------------
-  2. a  good command to run is DESCRIBE nameofdatabase; >> this command will tell you all infos about a database
+  2. a  good command to run is DESCRIBE nameofdatabase; >> this command will tell you alsl infos about a database
   3. to delete a table you run, DROP TABLE nameofdatabase;
   4.to modify database after creating a table we use:
     4.1 to add a part in the already existed column we use ALTER TABLE nameofdatabase ADD nameofcolumn datatype'INT or DECIMAL etc ...';
@@ -268,13 +268,76 @@ learned to rename a table by using ALTER TABLE nameoftable RENAME TO newtable'sn
 in thlis section we are going to make a complicated databes for a company
  the reason being that we need complex databases with multiple tables that are connected to understand some MYSQL concepts.
 
-
+1.TO add the primary key  for a tabel:
+ALTER TABLE nameofthetable
+ADD PRIMARY KEY (XXXXX
+); 
 ---------------------------------------------------------02:20:26-----------------------------------------------------------------------------------------
 
+more basic queries:
+1. querie one: find all employees: 
+    SELECT first_name, last_name FROM employee ;
+2.querie 2: find all employess ordered by name;
+   SELECT first_name, last_name FROM employee ORDER BY first_name ASC;
+3.querie 3: find by sex and then name:
+  SELECT * FROM employee ORDER BY sex, first_name;
+4.QUERIE 4: find 5 first employees:
+   SELECT * FROM employee LIMIT 5;
+5.querie 5: replace a column name by another :
+ SELECT first_name AS smiya , last_name AS kniya FROM employee; the table's column's names were originally created as first_name and last_name but with the
+    querie above , they became smiya and kniya.
+       NEW KEYWORD:
 
- 
+DISTINCT: USED TO KNOW TYPES OF DATA ENTERD;
+ SELECT DISTINCT sex FROM employee; let's say we have a table of sex like this 
++------+
+| sex  |
++------+
+| F    |
+| F    |
+| F    |
+| M    |
+| M    |
+| M    |
+| M    |
+| M    |
+| M    |
++------+
+we can use destinct to figure out the types of genders there are in that table, and the output would be the following:
++------+
+| sex  |
++------+
+| M    |
+| F    |
++------+
+*/*/*/**/**/*/*/**/*/*/**/*/**//**/*/*/*/*/*/*/*/*/*/*/*/*/*/FUNCTIONS**/*/*/*/*/*/*/*////////////////***/**/**/*//**/*/*//*/*/**/*//**/*/*/*/*/*/*/
+ 1.functions are blocks of codes that would do something for us
+  1.1 count() is function to count:
+       for example , we can count how many employees are there 
+                 SELECT count(first_name) FROM employee; or SELECT count(last_name) FROM employee;
+                  SELECT COUNT(emp_id) FROM employee WHERE sex='F' AND birth_day > '1971-01-01'; we can count with this how many females are born after 1970
+  1.2 AVG() this to get the average number of a column of numbers: you can get the average number of employee's salaries using:
+            SELECT AVG(salary) FROM employee;
++-------------+
+| AVG(salary) |
++-------------+
+|  92888.8889 |
++-------------+
+
+  1.3 SUM() TO KNOW HOW MUCH THE COMPANY PAY IT'S EMPLOYEES:
+     SELECT SUM(salary) FROM employee;
++-------------+
+| SUM(salary) |
++-------------+
+|      836000 |
++-------------+
+-money cash hh-
+
+   1.4 SELECT COUNT(sex),sex FROM employee GROUP BY sex; this will will how many males and females are there.
+   1.5 SELECT SUM(total_sales),emp_id FROM works_with GROUP BY emp_id; this will output how much each emlpoyee made for the company.
 
 
+    -----------------------------------------------------2:45:13------------------------------------------------------------------------------
 
 
 
