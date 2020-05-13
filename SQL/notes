@@ -338,25 +338,182 @@ we can use destinct to figure out the types of genders there are in that table, 
 
 
     -----------------------------------------------------2:45:13------------------------------------------------------------------------------
+WILDCARDS AND THE LIKE KEYWORD:
+ 1.WILDCARD ARE A WAY TO GRAB DATA TO MATCH A SPECIFIC PATTERNS
+   EXC1: FIND ANY CLIENTS THAT ARE IN LLC ON A TABLE
+   LIKE IS A WORD USED ALOGSIDE WILDCARDS
+      how to: SELECT * FROM client WHERE client_name LIKE'%LLC'; this command will output any row/data that has LLC on it 
+        LIKE is necessary and the % sign means any number of characters
+      SELECT * FROM branch_supllier WHERE supllier_name LIKE '%label%' ; putting to % signs will output any row that contain that word in general, but
+          when putting one % sign ,it will only output a row with that exact word.
+
+-----------------------------------------------2:52:16 went to  read documetation--------------------------------------------------------------------------
+
+
+selecting all the employees that were born in october
+  SELECT * FROM employee WHERE birth_day LIKE'____-10%';  the new thing here is the ____, those for dashes means the year, followed by -10 which is the month
+   it really depends on the format of the birth_day, 
+
+
+  *find any clients who are schools * so thinking about this, we wanna find any clients that have the word school on their name
+   we will use the following code: SELECT * FROM client WHERE client_name LIKE '%school%';
+
+----------------union---------------------------------------------------
+it's a special sql operator;
+ it can be used to combine multiple select operations;
+  UNION IS EASY TO USE:
+  ALL YOU HAVE TO DO IS ADD THE WORD UNION BETWEEN THE TWO SELECTS
+   SELECT first_name FROM employee UNION SELECT branch_name FROM branch;
++------------+
+| first_name |
++------------+
+| David      |
+| Jan        |
+| Michael    |
+| Angela     |
+| Kelly      |
+| Stanley    |
+| Josh       |
+| Andy       |
+| Jim        |
+| CORPORATE  |
+| SCRANTON   |
+| STAMFORD   |
++------------+
+rules to union ; you have to grab the same numbers of columns from each select and the datatypes have to be similar.
+you can use unions as much times as you want 
+
+you can also use functions when selecting and using union :
+SELECT SUM(salary) AS spent FROM employee UNION SELECT SUM(total_sales) AS earned FROM works_with;
+--------------------------------------------------------------------------joins in sql-------------------------------------------
+joins are used to combine infos from different tables with a shared column.
+  THIS IS THE GOOD STUFF
+ SELECT employee.emp_id, employee.first_name, branch.branch_name FROM employee JOIN branch ON employee.emp_id = branch.mgr_id;
+ 
++--------+------------+-------------+
+| emp_id | first_name | branch_name |
++--------+------------+-------------+
+|    100 | David      | Corporate   |
+|    102 | Michael    | Scranton    |
+|    106 | Josh       | Stamford    |
++--------+------------+-------------+
+
+4 basic types of joins:
+  1.inner join is join like the example above
+  2.left join 
+  3.right join
+  4.full join but not used 
+
+
+------------------------------------------------------------------------------------nested queries------------------------------------------------------
+more advenced queries
+SELECT employee.first_name, employee.last_name FROM employee WHERE employee.emp_id IN ( SELECT works_with.emp_id FROM works_with WHERE total_sales > 30000);
+ is an exampl of a nested querry.
+ we used IN() and put another sql statement inside of IN().
+ baissaclly what the nested query above does is look for all the total sales over 30000 in the works_with table, take the emp_id of those and then give it to 
+  the first statement where it looks for those emp_id taken from the child sql statement and display it's first and last name.
+
+
+--------------------------------------------------------03:17:08-----------------------------------------------------------------------
+find all clients managed by scott 
+SELECT client.client_name FROM client WHERE client.branch_id = (SELECT branch.branch_id FROM branch WHERE mgr_id = 102);
+this will output all the clients that are managed by scott
+
+
+------------------------------------------on delete --------------------------------------------------------------------------------
+a scenario to understand wtf:
+
+let's say we deleted michael scott from the database;given that scott 
+ is the only employee who posses the mgr_id 102; 102 exist in another table 
+  which the branch table
+   so what's gonna happen to the that mgr_id in the branch table if scott 
+     got deleted from the database knowing that he is the only one that got 
+      that mgr_id ?
+
+the answer is that we gonna use on delete cascade
+  that 102 will be set to null
+ 
+ we acheived this by using <<ON DELETE SET NULL>>  when creating the table.
+
+ there is also <<on delete cascade>> which means that all the rows that has a certain 
+   key are gonna get deleted
+   we use on delete cascade on rows that can't be null
+**--*--*--**-*--**-*-*-*-*-*-*-*-*-triggers -*-**---*-*-*-*-**-*--**--*-**--*
+
+it's a block of code that will tell mysql to do something when another happend 
+
+they can be extremely helpful and powrefull
+FINMA DAKHEL HNA , DAKHEL LHIH
+
+WHENEVER YOU ENTER SOMETHING IN table1 , enter this 'XXXx' in table 2
 
 
 
 
+example: the following code will achieve the following results
+         whenever a new row added into the table employee >> add a row that
+             says add new row in the tirger table
+
+steps
+ 1.create the triger table.
+ 2.insert this >> DELIMITER $$ 
+ 3.then insert the trigger itself >> CREATE TRIGGER my_trigger BEFORE INSERT ON
+    employee FOR EACH ROW BEGIN INSERT INTO trigger_test VALUES('add new row');
+       END $$
+ 4.DELIMITER ;
+ 5.INSERT INTO employee VALUES(109, 'oscar', 'martinez', '1962-02-01', 'M', 69000, 106, 3);
+
+another trigger:
+CREATE TRIGGER my_trigger BEFORE INSERT ON
+    employee FOR EACH ROW BEGIN INSERT INTO trigger_test VALUES('NEW.first_name');
+       END $$
+    this trigger will output new employee's name inserted in the table employee 
+       , will output it in the triger table
+
+
+more complexe trigger
+ the following triggers use conditions (if, else)                    
+
+
+ER DIAGRAMS ---------------------------------------------------------------------
+
+company give you database written document in english >>>> you design a ER 
+  diagram >>> you code that er diagram
+
+
+an example of a database written in a document in english
+
+-*-*-*-**-*--****************--*---**--*-*-*-*-*-*-*-*-*-*-*-*-**--**--****--*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-**--*-*-*--*-*-*-*
+   The company is organized into branches. Each branch has a unique number, a name, and a particular employee who manages it.
+
+The company makes it’s money by selling to clients. Each client has a name and a unique number to identify it.
+
+The foundation of the company is it’s employees. Each employee has a name, birthday, sex, salary and a unique number.
+
+An employee can work for one branch at a time, and each branch will be managed by one of the employees that work there. We’ll also want to keep track of when the current manager started as manager.
+
+An employee can act as a supervisor for other employees at the branch, an employee may also act as the supervisor for employees at other branches. An employee can have at most one supervisor.
+
+A branch may handle a number of clients, with each client having a name and a unique number to identify it. A single client may only be handled by one branch at a time.
+
+Employees can work with clients controlled by their branch to sell them stuff. If nescessary multiple employees can work with the same client. We’ll want to keep track of how many dollars worth of stuff each employee sells to each client they work with.
+
+Many branches will need to work with suppliers to buy inventory. For each supplier we’ll keep track of their name and the type of product they’re selling the branch. A single supplier may supply products to multiple branches.  
+*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*-*-*-*-*/*--*--*-*-*-*-*-*--**-*-*-*-*-*-*-*-*-*-*-*-**-**--**--*-*-*-*-*
+
+let's turn this to a ER diagram
+
+--/////////////////////////////////////////////////////////////////////4:07:49/////////////////////////////////////////////////////////////////////////////////
+ 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+NOTES:
+expand varchar by using == ALTER TABLE test MODIFY COLUMN nameofcolumn VARCHAR (500);
+DELETE FROM employee WHERE emp_id =102 ; to delete a line in a table
+delete triggers with DROP TRIGGER my_trigger;
+IN ER DIAGRAMS: DOUBLE LINE MEANS ALL AND SINGLE LINE MEANS NOT 
 
 
 
