@@ -504,9 +504,34 @@ Many branches will need to work with suppliers to buy inventory. For each suppli
 let's turn this to a ER diagram
 
 --/////////////////////////////////////////////////////////////////////4:07:49/////////////////////////////////////////////////////////////////////////////////
- 
+ so what i did is that i designed a ER DIAGRAMS based on the text provided by mike's course and then i coded it
+  and then i coded another database based on the ER he created 
 
 
+my ER + code : 
++----------------------+
+| Tables_in_my_company |
++----------------------+
+| branches             |
+| clients              |
+| employees            |
+| sells                |
+| supplier             |
++----------------------+
+his ER and my code:
++------------------------+
+| Tables_in_mike_company |
++------------------------+
+| branch                 |
+| client                 |
+| employee               |
+| suppliers              |
++------------------------+
+his ER and his code:
+his ER and code is bassacly what we have been working on the whole time
+
+pics in project*
+you can see tables detailed in the project folder*
 
 
 NOTES:
@@ -514,7 +539,54 @@ expand varchar by using == ALTER TABLE test MODIFY COLUMN nameofcolumn VARCHAR (
 DELETE FROM employee WHERE emp_id =102 ; to delete a line in a table
 delete triggers with DROP TRIGGER my_trigger;
 IN ER DIAGRAMS: DOUBLE LINE MEANS ALL AND SINGLE LINE MEANS NOT 
+how to select alll data from a table but a specific data 
+
+Use the NOT keyword to select all records where City is NOT "Berlin".
+SELECT * FROM Customers
+WHERE NOT City = 'Berlin';
 
 
 
+Select all records from the Customers where the PostalCode column is empty.
+SELECT * FROM Customers
+WHERE PostalCode IS NULL  ;
+
+Select all records from the Customers where the PostalCode column is NOT empty.
+SELECT * FROM Customers
+WHERE PostalCode IS NOT NULL  ;
+  
+
+select min or max number in a column with
+
+SELECT MIN(column_name)
+FROM table_name
+WHERE condition; 
+
+SELECT MAX(column_name)
+FROM table_name
+WHERE condition; 
+
+select records from table where it starts with an a and ends b
+SELECT * FROM TABLE WHERE COLUMN LIKE 'a%b';
+
+select all records but the ones that start with an a
+SELECT * FROM TABLE WHERE COLUMN NOT LIKE 'a%';
+
+select all records that starts with an 'a' or 'c' or 's' from a table
+SELECT * FROM TABLE WHERE COLUMN LIKE '[acs]%';
+
+select all records but the one that start with an 'a' or 'f'from a table
+SELECT * FROM TABLE WHERE COLUMN LIKE '[a-f]%';
+
+select all records that does not starts with an 'a' or 'c' or 's' from a table
+SELECT * FROM TABLE WHERE COLUMN LIKE '[^acs]%';
+
+Use the BETWEEN operator to select all the records where the value of the Price column is between 10 and 20.
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20;
+
+TRUNCATE TABLE test; this wil delete all the data inside a table but not the table itself
+ 
+
+offset X ; used to get the next X numbers of data
 
