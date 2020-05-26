@@ -1,0 +1,684 @@
+Python(20 may 2020):
+1.powerfull in terms of simplicity and it's high demand 
+2. there is no reason why shouldn't you learn py
+3.installing python and pycham text editor
+  3.1 download python from python.org'i downlaoded from terminal in linux'
+  3.2 you can write python in any text editor but it's highly recommended to write it in an IDE
+  3.3 IDE lide PYCHARM
+4.creating our first python program
+   1.print("hello world") is a program that will show hello world in the screen/console
+5.drawing a shape(write a simple python program)
+  5.1 print("   / +")
+     print("  /  +")
+     print(" /   +")
+     print("/_____")   
+       this will print the following:
+       / +
+      /  +
+     /   +
+    /_____
+6.the order of the code/instructions matters alot
+7.variables and data types:
+   with  python we will be working with alot of data
+    7.variables are data containers so they are extremely helpful 
+      print ("samir is a programmer")
+print ("he reads documentations")
+print ("samir is good")
+print ("be like samir")
+  let's say we wanna change the characters name , instead of doing it manually, we use a var
+   
+
+
+character_name = "ahmed"
+character_state = "bad"
+print (""+character_name+  " is a programmer")
+print ("he reads documentations")
+print ("samir is " +character_state+ "")
+character_name = "moha"
+print ("be like " +character_name+ "")
+
+
+
+here we used vars to change name 2 times and the state of the character (bad or good)
+  the vars in this program are :
+
+character_name = "ahmed"
+character_state = "bad"
+character_name = "moha"
+
+3.three types of data in python:
+   1.numbers 
+   2.true or false
+   3.strings which is plain text
+
+there is other type of datas but these are the most used
+
+
+
+
+---------------------------------------------------------------------------done in 27:04---------------------------------------------------------------------
+
+
+working with strings:
+ 1.strings are just plain text
+ 1.2 put \n to output next text in a new line
+ 1.3 store text in a var and print t later
+    exampl: phrase = "faty is cool"
+            print(phrase)
+ 1.4 contagnition is the following:
+      exampl: phrase = "faty is cool"
+            print(phrase + "but angry") which will output the following: faty is cool but angry
+
+
+hh-h-h-h-h-h--h-h-h-h-h-h-h-h-h-h-h-h-h-h-h-h-h-h-h -FUNCTIONS-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-H-
+
+phrase = "faty is cool"
+            print(phrase.upper()) this output that text in uppercase
+
+
+other functions:
+
+lower()
+islower()
+isupper()
+
+we can also use two functions at the time like:
+
+phrase = "faty is cool"
+print (phrase.lower().isupper())   this will convert that text into lowercase if not and check if it's uppercase
+
+the length function:
+phrase = "faty is cool"
+print(len(phrase)) 
+ this function count how many characters in that phrase
+
+
+
+
+which charactre function;
+phrase = "faty is cool"
+print(phrase[5]) 
+
+ this function gives you what character is in the number 5 which is here the character i
+   note: python count from 0 not 1
+
+
+++++ the index function
+phrase = "faty is cool"
+print(phrase.index("o"))
+
+it will give you the place of a character/word in that text; in this example the letter o is number 9
+
++++++++replace function
+phrase = "faty is cool"
+print(phrase.replace("c","b"))
+
+this fucntion to replace a letter by other or a word by other word 
+in this example we replaced c by b
+
+
+-*-*--**--*-*-*-*-*-*-*-*-*-**--*search in google for python functions and play with them -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*--**--*-*-*-*-*-*-*-**-
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++working in numbers++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+numbers are one of the most used data types in python.
+
+print(X) X is any number, decimal, normal, negativ any
+print (X + Y) we can all maths equations
+
+my_num = 1
+print (str(my_num)+ " is my favorite number")  to use number with strings
+
+
+functions:
+
+
++++++asb()
+my_num = -1.645
+print(abs(my_num))
+ it will output  the absolute value of a negative number
+
+
++++++++pow()
+l oss hh
+print(pow(4, 2)) this will give 16
+
++++++++++min(), max()
+are functions to get the bigger or the smaller number out of multiple numbers 
+print(max(4, 2, 9))  this will output the number 9 which the biggest number out of the three
+
++++++++++round()
+a function to round a number 
+print(round(32.8)) this will output  33.0 
+
+
++/*-+/*-+/*-+/*-+/*-+/*-+/*-+/*-+/*-+/*-+/*-+/*-+/*-+/*-+/*-+/*- there is some math functions that needs to be imported +/*-+/*-+/*-+/*-+/*-+/*-+/*-+/*-+/*-+/*-
+
+we import those functions by using: from math import*
+
+print(floor(3.4)) 
+print(ceil(3.4))
+print(sqrt(3.4))
+ 
+these are all some interesting functoins that need to be imported 
+
+
+010001001010101010101010101000100101010101010101010100010010101010101010101 GETTING INPUT FROM USERS 010001001010101010101010101000100101010101010101010100010010101010101010101
+
+THIS IS THE GOOD STUFF
+
+
+GET input from a user and give them an answer
+
+
+
+name = raw_input("Enter your name")
+print("hello" + name + "!")
+
+
+when runing this script, first the console will show you the enter your name phrase, then youll have to enter your name and hit enter, and then it 
+   output hello 'name inserted by user' ! 
+
+
+name = raw_input("Enter Your name:")
+role = raw_input("Enter Your role:")
+print("Hello my friend " + name + "! so you chose " + role + " as a role")
+
+OUTPUT 1:
+Enter Your name:youness
+OUTPUT2:
+Enter Your role:programmer
+FINAL OUTPUT:
+Hello my friend youness! so you chose programmer as a role
+
+123456789123456789123456789123456789123456789123456789123456789 FINISHED AT 25:37 123456789123456789123456789123456789123456789123456789123456789123456789
+
+note: in 2.7 python youll have to use the function raw_input() instead of input() which is used in python 3
+
+
+made an mad lips game 
+
+color =raw_input("enter a color ")
+celebrity =raw_input(" enter a celebrity ")
+object =raw_input("enter an object")
+
+print("voilets are " +color+ " roses are "+celebrity+ "my face actor is" +object)
+
+
+-+-+-+-+-+-+-+-+-+-+-+ finished at 01:03:00-+-+-+-+-+-+-+-+-+-+-+ finished at 01:03:00-+-+-+-+-+-+-+-+-+-+-+ finished at 01:03:00-+-+-+-+-+-+-+-+-+-+-+ finished at 01:03:00
+
+
+================================== ================================== lists ================================== ================================== 
+
+we can deal with large numbers of data,
+a python list gonna help us manage those large numbers of data
+
+
+
+
+a list is this:
+family = ["moha", "fatima", "omar", "khadija"]
+
+we can put strings, numbers and bolean values.
+
+--------------
+
+family = ["moha", "fatima", "omar", "khadija"]
+print (family[0])
+
+this will output the value with the index 0 which moha in this example
+
+--------------
+family = ["moha", "fatima", "omar", "khadija"]
+print (family[-1])
+
+this negative index will start from the last of the list
+--------------
+
+family = ["moha", "fatima", "omar", "khadija"]
+print (family[1:])
+
+this will output the value with index 1 and all the values after it
+--------------
+family = ["moha", "fatima", "omar", "khadija"]
+print (family[1:3])
+
+this will grab the values with the index 1,2 and 3
+
+--------------
+
+family = ["moha", "fatima", "omar", "khadija"]
+family[1] ="ahmmed"
+print (family[1])
+
+
+this will change the value with the index of 1 before printing out the results
+
+--------------
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ list functoins ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+gamble_number = [4, 5, 9, 7, 6, 4]
+family = ["moha", "ahmed", "blue", "samir", "mike" ]
+family.extend(gamble_number) //new function here
+print(family)
+
+
+this will add the gamble_number list to the family list
+
+
++-+-+*-+*-+*-+*-+*
+
+gamble_number = [4, 5, 9, 7, 6, 4]
+family = ["moha", "ahmed", "blue", "samir", "mike" ]
+family.append("phone") //new function here
+print(family)
+
+this will add the value phone in the end of the list
+
++-+-+*-+*-+*-+*-+*
+
+
+
+gamble_number = [4, 5, 9, 7, 6, 4]
+family = ["moha", "ahmed", "blue", "samir", "mike" ]
+family.insert(2, "keyboard")  //new function here
+print(family)
+
+this will add the value keyboard in the index 2 
+
+
+-+*-+*-+*-+*-+*-+*-+*-+
+
+
+gamble_number = [4, 5, 9, 7, 6, 4]
+family = ["moha", "ahmed", "blue", "samir", "mike" ]
+family.remove("ahmed")
+print(family)
+
+to remove the value the ahmed 
+
++-*+-*+-*+-*+-*
+
+
+
+gamble_number = [4, 5, 9, 7, 6, 4]
+family = ["moha", "ahmed", "blue", "samir", "mike" ]
+family.clear()
+print(family)
+
+
+delete all the values and gives a empty list
+
+
+
++--*-+*-+--*+**+**--
+
+gamble_number = [4, 5, 9, 7, 6, 4]
+family = ["moha", "ahmed", "blue", "samir", "mike" ]
+family.pop()
+print(family)
+
+to get rid of the last value
+
+
++-*-+-*-+-*-+-*-+-*-+-*-+-*-+
+
+
+gamble_number = [4, 5, 9, 7, 6, 4]
+family = ["moha", "ahmed", "blue", "samir", "mike" ]
+
+print(family.index("blue"))
+
+ to know if a specific element is in the list and it will give you its index
+
+
+
++*-+*-+*-+*-+*-+*-+*-
+
+
+gamble_number = [4, 5, 9, 7, 6, 4]
+family = ["moha", "ahmed", "blue", "samir", "mike" ]
+
+print(family.count("blue"))
+
+
+how many times that value is on the list which i here just 1
+
++-*-+*--*+*-*+*-*+*-*-*+*-*+*-
+
+
+gamble_number = [4, 5, 9, 7, 6, 4]
+family = ["moha", "ahmed", "blue", "samir", "mike" ]
+family.sort()
+print(family)
+
+
+this will sort the list ASC  which will output ['ahmed', 'blue', 'mike', 'moha', 'samir']
+
+
++-*-+*--*+*-*+*-*+*-*-*+*-*+*-
+gamble_number = [1, 2, 3, 4, 5 ]
+family = ["moha", "ahmed", "blue", "samir", "mike" ]
+gamble_number.reverse()
+print(gamble_number)
+
+
+reverse the list which will output  [5, 4, 3, 2, 1]
+
++-*-+*--*+*-*+*-*+*-*-*+*-*+*-
+import copy
+gamble_number = [1, 2, 3, 4, 5 ]
+family = ["moha", "ahmed", "blue", "samir", "mike" ]
+money = copy.copy(gamble_number)
+print(money)
+
+
+this will make a copy list of the list gamble_number 
+this function needs to be imported because it doesn't exist 
+
++-*-+*--*+*-*+*-*+*-*-*+*-*+*-+-*-+*--*+*-*+*-*+*-*-*+*-*+*- Tuples +-*-+*--*+*-*+*-*+*-*-*+*-*+*-+-*-+*--*+*-*+*-*+*-*-*+*-*+*-+-*-+*--*+*-*+*-*+*-*-*+*-*+*-
+
+
+tuples can't be modified at all
+
+the diff between a tuple and a list is that a list can be modified but the tuple cannot be modified at all , values can't be changed, deleted ....etc
+
+coordinates =  (4, 5)
+print(coordinates[1])
+
+this is printed tuple
+
+                                                      FINISHED AT 01:24:15
+
++6+6+6+6+6+6+6+6+6+6+6+66+6+6+6+6+6+6+6+6+6+6+6+66+6+6+6+6+6+6+6+6+6+6+6+66 FUNCTIONS +6+6+6+6+6+6+6+6+6+6+6+66+6+6+6+6+6+6+6+6+6+6+6+66+6+6+6+6+6+6+6+6+6+6+6+66
+
+
+a function is a collection of code that accomplish a task.
+how to create a function that says HI
+
+
+we tell python that we create a function we say def, give it a name and then we say
+def salam(): this will tell python that every code after this line should be excuted
+then print the code you want to be outputed
+def salam():
+    print('fin a 3shiri')
+and then call the function by
+def salam():
+    print('fin a 3shiri')
+salam() ////this is the call
+
+
+
+parameters /// you define parameters so that the function do something when calling it
+
+
+def salam(name):
+    print('fin a ' + name)
+salam("hmida")
+salam("samira")
+
+
+here what it does is say the name alongside saying fin a ...
+
+
+another example where there is 2 parameters 
+def salam(name, age):
+    print('fin a ' + name+ 'f 3amrk ' +str(age)+" 3am")
+salam("hmida", 40)
+salam("samira", 15)
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++return statement ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+sometimes we want to get infos back from a function after it does it's tasks and that when return statement works:
+
+def oss(num):
+    return num*num*num
+
+print(oss(5))
+
+ 
+more advenced using a var
+ 
+def oss(num):
+    return num*num*num
+result = oss(5)
+print(result)
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++if statements ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+excute some code in some conditions
+ but excute different code on other conditions
+
+
+if statements in english:
+   
+   i wake up
+   if i am hungry    ///if this condition is true then we eat breakfast, if not we move on
+     i'll eat breakfast
+
+
+   i go to restaurant
+    if i they have tacos 
+      i'll order it
+        otherwise ill just have couscous 
+
+          //// double conditions
+
+    
+  i go to restaurant
+    if i they have tacos 
+      i'll order it
+        otherwise if they have couscous just have couscous 
+          otherwise we leave
+
+ /// triple condtions
+
+
+simple python if statement:
+
+is_male = True
+
+if is_male:
+  print('Doz')
+
+
+another python statement with else :
+
+
+is_male = False
+
+if is_male:
+ print("doz")
+
+else:
+ print("w9af")
+
+
+third python statement with double conditions 
+
+
+is_male = False
+is_overage = False
+if is_male or is_overage:
+ print("doz nta nadi kanadi")
+
+else:
+ print("w9af nta fik moshkil")
+
+only 1 or both have to be true 
+
+
+
+to make it so that both conditions are true we have to use and instead of or
+
+
+
+is_male = False
+is_overage = False
+if is_male and is_overage:
+ print("doz nta nadi kanadi")
+
+else:
+ print("w9af nta fik moshkil")
+
+
+this needs both conditions to be true
+
+
+
+the most complex if statement of them all:
+
+is_male = False
+is_underage =  False
+
+if is_male and is_underage:
+    print ("Tbarkllah doz")
+elif is_underage and not(is_male):
+    print("7bass nta mashi rajl")
+
+elif is_male and not(is_underage):
+    print ("ba9i barhosh")
+
+else:
+    print ("khroj t9awd")
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++if statements and comparaisons ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+def max_num(num1, num2, num3):
+    if num1 >= num2 and num1 >= num3:
+        return num1
+    elif num2 >= num1 and num2 >= num3:
+        return num2
+    else:
+        return num3
+
+print(max_num(1, 2, 3))
+
+
+if statements and comparaison between numbers
+
+
+>
+<
+<=
+>= 
+!= not equal
+== equal
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++building a better calculator++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++02:00:00++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+building a more adenced calculator-------------------------------
+
+#building an advenced calculator
+
+num1 = float(raw_input("Enter first number: "))  #float is to only input numbers
+op = raw_input("enter operator: ") #to figure out which operator by if statement
+num2 = float(raw_input("Enter second number: "))
+
+
+if op == "+":
+     print (num1 + num2 )
+elif op == "-":
+    print(num1 - num2 )
+elif op == "/":
+    print(num1 / num2 )
+elif op == "*":
+    print(num1 * num2 )
+
+else:
+    print('Invalid')
+
+*-----------------------------------end------------------------------
+
+
+
+--------------------dictionnary---------------------------------------
+it's a special thingy in python
+#dictionnary
+#cenvert a 3 digit month to full name like feb to february
+
+monthconv = {
+    "Jan":"January",
+    "Feb":"February",
+    "Mar":"March" ,
+    "Oct":"October",
+}
+print(monthconv["Oct"])
+
+which output October
+
+
+ or use a better function instead which is print(monthconv.get("Jan"))
+   the reason get() is better is beacuse python gonna output something if the value entered does not exist in the dictionnary
+     we can say print(monthconv.get("Jan", "Not a valid Input")) this will show the sentence Not a valid Input if the value inserted doen't exist in the dic
+
+
+
+------------------------------while loops----------------------------------------
+
+
+putting code inside a while loop will loop that code until a specific condition tell it to stop
+
+#while loops
+
+
+i = 1
+#to create a loop
+while i <= 10:
+    print(i)
+    i+= 1
+
+#the code after the while line is the code gonna be looped
+#we printing i+1 over and over until the i = 10
+
+this code will keep looping until i=10 and then and only then it will stops 
+
+
+
+*************building a guessing game******************************
+
+#bulding a basic guessing game
+""""
+well have a secret word and the user will try to guess it
+
+"""
+
+
+what i built:
+
+secretword = "hmar"
+print("chno howa li kayhaz lkhodra kola nhar")
+guess = raw_input("Enter answer: ")
+
+
+while guess == secretword:
+   print('You are the guessing champ')
+else:
+    print('nta hmar, guess again')
+
+
+what mike my teacher built:
+
+
+
+
+notes:
+
+comments: for single line # and for multiple lines """"XXX"""
+
+
+finished at 02:24:00 ---------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
