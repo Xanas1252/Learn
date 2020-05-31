@@ -745,6 +745,41 @@ print (2**3)
 
 
 but we wann use a for loop
+#here is downloaded python on my windows and started working in windows instead of linux because linux does use the latest version of python and i face some problems since the course i am watching teaches with python 3
+
+def raise_to_power (base_num, pow_num):
+    result = 1
+    for index in range(pow_num):
+        result = result * base_num
+    return result
+
+print(raise_to_power(3, 2))
+
+*---**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- 2d lists and nested loops -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-
+
+a nested loop is a loop inside a loop like 
+
+number_grid =[
+     [1,2,3],
+     [4,5,6],
+     [7,8,9],
+     [0]
+ ]
+
+
+
+for row in number_grid:
+    for col in row:
+        print(col)
+
+
+and the number_grid list is the 2d list because it has columns and rows, (4columns and 3 rows)
+
+
+
+*/*-*/-*/-*/-*/*-/*-/-*/-*/-*/-*/-*/-*/-*/-*/-*/-*/-*/-*/ 02:52:40 /-/*/-*/--*/-*/-*/-*/-*/-*/-*/-*/-*/-*/-*/-*/-*/-*/
+
+
 
 
 notes:
