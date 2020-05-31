@@ -666,14 +666,93 @@ else:
 what mike my teacher built:
 
 
+word = "lion"
+guess = ""
+
+while guess != word:
+    guess = raw_input("Enter the word: ")
+
+print("you win")
+
+
+version 2 of it 
+add a specific tries to guess
+
+word = "lion"
+guess = ""
+guess_count = 0
+guess_limit = 3
+out_of_guesses = False
+
+while guess != word and not(out_of_guesses):
+    if guess_count < guess_limit:
+        guess = raw_input("Enter the word: ")
+        guess_count += 1
+    else:
+        out_of_guesses = True
+if out_of_guesses:
+       print("Out of guesses ! You lose")
+else:
+        print("you win")
+
+the above code is more complex guessing game in comparaison with the other ones! it has a limited tries which is 3 
+
+-*-*-*-*--*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* for loops -*-*-*-*-*-*-*-*-*-*--*-*-*-*--*-*-*
+#for loops in python, these are special types of python to loop throght things
+friends = ["faty", "amine", "adil"]
+for friend in friends:
+    print(friend)
+
+
+this will ouptut the following :
+faty
+amine
+adil
+
+
+another example is:
+for letter in "lion academy":
+    print (letter)
+
+which will output the following:
+l
+i
+o
+n
+ 
+a
+c
+a
+d
+e
+m
+y
+
+
+or loop through numbers:
+
+for index in range(5 , 20):
+    print (index)
+
+this will loop from 5 to 19  
+
+
+*--*-*-*-*-*-*EXponent function *-*-**-------------------
+#exponennt function is to raise a number to a specific power
+
+print (2**3)
+
+
+
+but we wann use a for loop
 
 
 notes:
 
 comments: for single line # and for multiple lines """"XXX"""
+space is very important when coding in python
 
 
-finished at 02:24:00 ---------------------------------------------------------------------------------------------------------
 
 
 
