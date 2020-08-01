@@ -1,0 +1,80 @@
+
+*********************************************************************************************************************************************************
+
+
+Object oriented programming:
+is a modern good way of writing code.
+
+1.The four principles of object-oriented programming are encapsulation, abstraction, inheritance, and polymorphism
+  1.encapsulation:
+     -is writing code in one unit instead of writing it in 2 + blocks.
+  
+    example shows the concept of encapsulation
+//////////////////////////////////////////////
+   let salary = 32241;
+   let overtime = 10
+   let rate = 32;
+     
+function getWage(salary,overtime,rate){            ////////////example of code not written with oop.
+   return salary + (overtime * rate);
+}
+
+//////////////////////////////////////////////
+
+//////////////////////////////////////////////
+   let employee = {
+    salary = 32241,
+   overtime = 10,
+   rate = 32,
+     
+    getWage: function(){
+  
+    return this.baseSalary + (this.overtime * this.rate);         /////////////////// example of code written with oop.
+}        
+};
+
+employee.getWage();
+
+//////////////////////////////////////////////
+
+
+
+
+
+
+   2.abstraction
+     is the act of hiding some methods and properties in the code.
+      you can imagine it as a vcd player, it has the outside buttons that are simple and it has the hard important stuff inside hidden.
+          Cell phones are complex. But using them is simple.
+                maintining large programs for a long time is hard! so the smaller they are the more controlable and more easy to fix/change
+   3.inheritance
+     as the word say, it's inherinting code.
+       instead of using the same code for multiple different elements, we use the same code just once for multiple elements
+        .it's like using the same css file for multiple html files. or using the same css code for multiple buttons in a page.
+   4.polymorphism
+       poly means many and morphism means form.
+        it's a technique that allow you to use less code but accomplish the exact same goal.
+
+ Random notes:
+
+ 
+-an object in oop is when you combine vars and functions that are related to each other.
+  vars = property
+  functions = methods
+-spaghetti code is bad code, the old way of programming is writing bunch of functions one after the other.
+
+
+functions also refred to as methods and operations
+*********************************************************************************************************************************************************
+
+              here comes a similar concept that is seems to be important
+                         OBJECT ORIENTED DESIGN
+
+
+
+
+
+
+
+
+

@@ -778,9 +778,231 @@ and the number_grid list is the 2d list because it has columns and rows, (4colum
 
 
 */*-*/-*/-*/-*/*-/*-/-*/-*/-*/-*/-*/-*/-*/-*/-*/-*/-*/-*/ 02:52:40 /-/*/-*/--*/-*/-*/-*/-*/-*/-*/-*/-*/-*/-*/-*/-*/-*/
+-+-++-+-++-+-++-+-++-+-++-+-++-+-++-+-++-+-++-+-++-+-++ translator -+-++-+-++-+-++-+-++-+-++-+-++-+-++-+-++-+-++-+-++-+-++-+-++
+
+
+#build a translator
+#Giraffe  language, vowels -> g
+
+def translate(phrase):
+    translation = ""
+    for letter in phrase:
+        if letter in "AEIOUaeiou":
+            translation = translation + "g"
+        else:
+            translation = translation + letter
+    return translation
+
+print(translate(input("Enter a phrase: ")))
+
+-*-*-*-*-*-*-*-*-*-*-*-*-* try except -*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-
+#ctaching errors in python,
+
+
+try:
+   value = 10/0
+   number = int(input("Enter a number: "))
+   print(number)
+except ValueError:
+    print("Wrong value")
+except ZeroDivisionError:
+    print("divided by zero")
+#here the input only accept numbers, we put try blocks to ask them to enter the right stuff
+#except detect errors
 
 
 
+-*-*-*-*-*-*-*-* -*-*-*-*-*-#python read command to open/read/close files that are not python
+
+open("learn.txt", "r") #only read that file
+open("learn.txt", "w") #modify that file
+open("learn.txt", "a") #add stuff to the end of the file only
+open("learn.txt", "r+") #full control
+
+#python read command to open/read/close files that are not python
+#there is a function to know if a file is readable
+learn = open("learn.txt" , "r")
+print(learn.readable())
+
+learn.close()
+
+
+
+
+#python read command to open/read/close files that are not python
+#output the content of that file
+learn = open("learn.txt" , "r")
+print(learn.read())
+
+learn.close()
+
+
+
+
+#python read command to open/read/close files that are not python
+#output the first line of the file
+learn = open("learn.txt" , "r")
+print(learn.readline())
+
+learn.close()
+
+
+
+
+#python read command to open/read/close files that are not python
+#output the content in a list
+learn = open("learn.txt" , "r")
+print(learn.readlines())
+
+learn.close()
+
+
+
+
+#python read command to open/read/close files that are not python
+#output a specific line from the file
+learn = open("learn.txt" , "r")
+print(learn.readlines()[2])
+
+learn.close()
+
+
+#writing files
+
+learn = open("learn.txt" , "a")
+
+learn.write("\nkhadija  - operator")# you have to use backslash n so that the new data is added into a new line in case there is no lines in the file modified
+
+
+learn.close()
+
+
+
+#writing files
+#this will format the file and only have omar - singer
+learn = open("learn.txt" , "w")
+
+learn.write("omar -  singer")
+
+learn.close()
+
+
+#writing files
+#this will create a new file
+learn = open("newpage.txt" , "w")
+
+learn.write("omar -  singer")
+
+learn.close()
+
+
+#writing files
+#you can also write html inside python
+learn = open("index.gtml" , "w")
+
+learn.write("<p>html</p>")
+
+learn.close()
+
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+Modules and pipe in python-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+modules:
+
+#modules
+#modules are python files that we can import to our current python file to access functions and varialbes
+#instead of copying a whole function and pasting it in our file, we can just import it from the usefull.py file
+
+
+import useful
+
+print(useful.roll_dice(100))
+
+
+**there is a huge list of python modules that you can acces in the python docs website++ super helpful
+
+there is 2 types of modules:
+
+1. built in modules 
+2. external modules
+
+
+
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* pip -*-*-*-*-*-*-*-*-*-*-*-*-*
+is a python program used to install python modules
+
+
+pip is already installed on recent python versions
+but to check on windows, you go to cmd and use the commande pip --version
+
+
+using pip:
+ we installed python docx which a module using the commmande: 
+        pip install python-docx
+
+
+to use it, we only need to say import docx and we are ready to go
+-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*- classes and object -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+
+#classes and objects help you organise data, they are powerful
+#not all datas can be categorized as number,strings and bolean so we use these help do that
+#we are creating a student data type
+
+
+from student import Student #importing Student from the file student
+
+student1 = Student("Youness", "compute science", 1.1, False) #this is a student OBJECT
+
+print(student1.name)
+
+
+
+and in file 2 which called student.py:
+
+
+
+
+
+building a quizz *-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*
+
+
+class Question:
+     def __init__(self, prompt, answer):
+          self.prompt = prompt
+          self.answer = answer
+
+question_prompts = [
+     "What color are apples?\n(a) Red/Green\n(b)Orange",
+     "What color are bananas?\n(a) Red/Green\n(b)Yellow",
+]
+
+questions = [
+     Question(question_prompts[0], "a"),
+     Question(question_prompts[1], "b"),
+]
+
+def run_quiz(questions):
+     score = 0
+     for question in questions:
+          answer = input(question.prompt)
+          if answer == question.answer:
+               score += 1
+     print("you got", score, "out of", len(questions))
+
+run_quiz(questions)
+
+
+
+
+#inherintance
+#inherent a class from another class without having to cope paste all the code
+
+
+
+
+#python intrepter
+
+is the program you can write python code in using CMD or Terminal
 
 notes:
 
