@@ -1,0 +1,13 @@
+Learning javascript 2.0
+
+1.OOP 
+  1.OOP is style of programming
+2.what is js?
+  2.1 it's the most popular programming language, highly popular and extremely powerful  
+3.what can you do with it ?
+  3.1 build web/mobile apps
+  3.2 games
+  3.3 servers
+  3.4 bots 
+     3.5 and many more things ! 
+4.      

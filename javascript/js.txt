@@ -1,0 +1,572 @@
+********************************* Traversy Javascript Crash course ***********
+-----------------------------WHAT IS JAVASCRIPT-------------------------------
+1.JS IS A HIGH LEVEL INTERPRETED(don't need a compiler) PROGRAMMING LANGUAGE
+---------------------------WHY LEARN JS --------------------------------------
+VERY POWERFUL/EASY LANGUAGE
+
+--------------------------- GETTING STARTED ----------------------------------
+1.FOR THIS COURSE WE GONNA BE USING VSCODE AND AN EXTENSION CALLED LIVE SERVER(for auto browser refresh when editing a page)
+2.Put javascript on the bottom before the ending body tag or preferably in a 
+  seperate javascript file
+  example:
+
+    <script>
+  alert('hellow world');
+</script>
+
+ this is a simple script that shows an alert that says hello world
+
+3.we gonna load our javascript code from an external file called main.js
+  3.1 we put the tag script with src of the file <script src="main.js"></script>
+
+                      CONSOLE
+
+
+1.every browser have a console and we gonna use it alot to learn
+2.in the console, we can excute js code 
+3.we can output to the console from our text editor
+ example:
+   console.log('salam'); this will show salam in the console
+4.other useful console commands:
+   console.error('oopss');
+   console.warn('yowtf')
+
+it's great for debugging
+    ***********check console mdn for more infos *************
+
+
+/********************* VARIABLES *****************************************/
+
+//variables
+  //var, let, const
+  //var is the oldest
+//You don't wanna use it anymore
+  //it can cause problems if there is similar var names
+// the diff between let and const
+   //let can let you can reassign values
+     //example
+      let age = 30;
+      age = 31;
+      console.log(age);
+     //this will output 31 despite the first value
+       //but for const
+       const age = 30;
+       console.log(age);
+       //having age = 31 is not an option because it will trigger an error
+// ALWAYS USE CONST UNLESS YOU WANT THAT VALUE CHANGED
+
+
+/*******************************Data types ******************************/
+
+
+  // Strings, numbers, boolean, null, undfined
+
+const name = 'Youness'; //string
+const age = 30; //number
+const isCool = true; //boolean
+const x = null; //undfined
+const y = undefined; //undfined
+let z; //undfined
+
+
+console.log(typeof name); //this typeof will test the type, meaning know what type of data 
+
+
+
+/***********************strings********************************************/
+
+ //Concatenation
+     //console.log('My name is ' + name + ' and i am '+age);//this an old way of concatenation
+      // a better way is
+        //Template string
+       //   const hello  = `My name is ${name} and i am ${age}`;
+       // console.log(hello);
+    //string's methods
+   const s = 'hello world'; 
+   //console.log(s.toLocaleLowerCase());
+   //console.log(s.toLocaleupperCase());
+   //console.log(s.length);
+   //console.log(s.split(''));
+
+
+/************************************Arrays*******************************/
+
+     Variables that hold multiple values
+     const number = new Array(1,2,3,4,5,);
+     console.log(number);
+
+     const fruits = ['orange', 'citron', 'peeach']
+     console.log(fruits);
+
+     const numbersandfruits = ['watermelon' , 5, 'strawberry']//this just to say that we can use different types data inside an array unlike many other languages
+    console.log(numbersandfruits);
+
+
+    const fruit = ['orange', 'citron', 'peeach']
+     console.log(fruit[0]);//to output a specific data from the list of fruits
+    
+     const fruitt = ['orange', 'citron', 'peeach']
+           fruitt[3] = 'grapes';//To add(not the best method) or replace a specific data by another
+    fruitt.push('mangos');// is the best way to add data to an array
+    fruitt.unshift('swihla'); //add to the begining
+    fruitt.pop(); //to delete the last one
+    console.log(fruit.indexOf('citron'));// to know the index of a specific data
+    
+    
+    console.log(fruitt)
+
+/*****************************************comments************************/ 
+     //for single line
+     /* for multiple 
+     line*/
+/***********************************object literals***********************/
+
+
+//object literals
+  const person = {
+      firstname: 'Youness',
+      lastname: 'Asserare',
+      age: 20,
+      hobbies: ['programming', 'MMA'],
+      address: {
+          street: 'Bournazel',
+          city: 'Boston', 
+          State: 'Grand casa'
+      }
+  }
+  console.log(person.firstname)
+  console.log(person.hobbies[1])
+  console.log(person.address.street);
+
+
+
+//arrays of objects
+const todos = [
+    {
+        id: 1,
+        Text: 'Breakfast',
+        isDone: true
+    },
+    {
+        id: 2,
+        Text: 'wash teeth',
+        isDone: false
+    },
+    {
+        id: 3,
+        Text: 'Learn',
+        isDone: true
+    }
+
+    
+];
+
+
+console.log(todos[2].Text);
+
+/***************************************Json******************************/
+
+//json
+  //a data format used in full stack dev and APis
+  //the following is vanilla js Array
+  /*[
+    {
+        id: 1,
+        Text: 'Breakfast',
+        isDone: true
+    },
+    {
+        id: 2,
+        Text: 'wash teeth',
+        isDone: false
+    },
+    {
+        id: 3,
+        Text: 'Learn',
+        isDone: true
+    }
+
+    
+]*/
+
+ //using a json converter and it will become
+ /*[
+    {
+       "id": 1,
+       "Text": "Breakfast",
+       "isDone": true
+    },
+    {
+       "id": 2,
+       "Text": "wash teeth",
+       "isDone": false
+    },
+    {
+       "id": 3,
+       "Text": "Learn",
+       "isDone": true
+    }
+ ]*/
+ //the difference really is only on the "" Around the strings
+ const todos = [
+    {
+        id: 1,
+        Text: 'Breakfast ',
+        isDone: true
+    },
+    {
+        id: 2,
+        Text: 'wash teeth ',
+        isDone: false
+    },
+    {
+        id: 3,
+        Text: 'Learn',
+        isDone: true
+    }
+
+    
+];
+/*for(let todo of todos){
+document.write(todo.Text);
+}*/
+//const todoJSON = JSON.stringify(todos);
+//console.log(todoJSON)
+//the output of this is how it's gonna be sent to the server
+
+
+
+
+
+/******************************************LOOPS**************************/
+
+// Loops
+  // for loops 
+ /* for(let i=0; i < 10; i++){
+      console.log(i);
+  }*/
+  //whatever code is inside this for loop gonna run until the condition is true (i < 10)
+  //i=0 is the initial state
+  //i++ add 1 to i and keep adding it
+  //keep adding until the condition i < 10
+   
+  //while loops
+    //old school loops
+
+    /*let i = 0;
+    while(i < 10){
+        console.log(i);
+        i++;
+    }*/
+
+    //loop through arrays
+ /* for(let todo of todos){
+      console.log(todo.Text);
+    }*/
+
+    //traversy best suggestion to do any kind of atiration
+    //forEach, map, filter
+      //forEach
+    /* todos.forEach(function(todo) {
+console.log(todo.Text);
+     });*/
+     //map
+      const todotext = todos.map(function(todo){
+          return todo.Text;
+      });
+      console.log(todotext)
+    //filter
+    const todoisdone = todos.filter(function(todo){
+        return todo.isDone === true;
+    });
+    console.log(todoisdone);
+   //in this last example, we recieved the data that is true from the arrays
+
+
+
+/**************************************if statements ************************************************/
+//if statements
+
+const x = 20; //Creat a var called x and set it to 10
+const y = 30;
+if (x === y)//condition
+ {
+    document.write('x tosawi y');//if it's true, it output you won
+} else if(x > y) {
+    document.write('x akbar mn y');//we can have as much else ifs as we want
+} else {
+    document.write('x is smaller than y ');//if it's wrong, it output booooho
+}
+
+
+
+const i = 20; //Creat a var called x and set it to 10
+const w = 35;
+// || means or
+// && means and
+if (i === w || i === 20 || w === 30)//condition
+ {
+    document.write('you got at least 1 right ! congrats');//if it's true, it output you won
+}
+
+if (i === w || i === 20 && w === 30)//condition
+ {
+    document.write('you got at 2 answers right ! congrats');//if it's true, it output you won
+}
+
+/***********************turnary operator**********************************************************/
+
+//turnary operator
+  // a short hand if statement
+
+
+  const x = 10 ; 
+
+  const color = x ===10 ? 'red' : 'blue';
+  //document.write(color);
+  
+  //the question mark is the turnary operator
+  // : is the else 
+
+//switches 
+ switch(color){
+      case 'red':
+       document.write('color is red');
+       break;
+      case 'blue':
+          document.write('color is blue');
+        break;
+        default:
+            document.write('color is Not red nor blue');
+            break;
+  }
+
+
+
+
+
+/***************************************functions ************************************************/
+//functions
+
+//function1
+function addNums(n, x){
+ document.write(n + x );
+  
+}
+addNums(5, 6);
+
+
+//function2
+function addition(n = 2 , x = 3){
+document.write(n + x)
+}
+addition();
+
+
+ //function3
+function calc(x, n){
+   return x + n ;
+}
+document.write(calc(2, 5));
+
+//arrow function or whatever
+
+const zidnum =  num1 => num1 + 5;  
+document.write(zidnum(5));
+
+//Nan mean not a number
+
+
+//constructor functions
+function Person(Nom,prenom,age){
+  this.Nom = Nom; 
+  this.prenom = prenom; 
+  this.age = new Date(age); 
+} //constructor function start with a capital Letter
+
+
+//Instantiate object
+
+const person1 = new Person('John', 'Doe', 20);
+const person2 = new Person('hmida', 'mida', 22);
+
+
+console.log(person2)
+document.write(person1.Nom);
+
+
+//Dates
+ //date object: new Date()
+const person3 = new Person('John', 'Doe', '3-5-1999');
+console.log(person3.age.getFullYear());
+//getFullYear() is a method you can call on objects like the new Date() object
+
+
+
+/****************************************DOM *******************************************/
+
+     /*console.log(window);//window object
+         alert(1);//you can just write this since there window before it
+*/
+
+
+//DOM 
+  //Document object model
+    //selection: selecting elements from html
+     //single element
+ //document.getElementById('my-form');//document to select from elemrnt and getelementbyid is to select it by id  
+  //we can console it to see the result
+       //queryselectors are like jquery to select classes/tags since we can't with getelementby id
+         //console.log(document.querySelector('h1'));//quereyselector to things other than id 
+       //Multiple element
+           //console.log(document.querySelectorAll('.item'));//to obv select multiple ID's / tags/classes
+    //this output a node list which similar to arrays
+      //looping through things : list in this example
+      //   const items = document.querySelectorAll('.item');
+        //   items.forEach((item) => console.log(item));  
+     
+    //manipulating the DOM(the user interface)
+     //const list = document.querySelector('.items'); 
+       //list.remove();//this is cool method to remove the lists with the class items
+      //list.lastElementChild.remove();//to remove last child element
+    //list.firstElementChild.textContent ="Hello";//replace the first child with the text hello
+     //list.children[1].innerText = 'brad';//children is an node list which means we can select with index
+     //list.lastElementChild.innerHTML = '<h1>Trying js objects</h1>';//replace the last element by an html code
+
+   //playing with the button
+     //const btn = document.querySelector('.btn');
+     //btn.style.background = 'red';
+     // you can say we have css ! why would we use this
+     //the answer is that you don't think far because you can make this dynamic and  can be very powerfull
+
+
+//events
+/*const btn = document.querySelector('.btn');
+btn.addEventListener('click', (e) =>{
+    e.preventDefault();//to stop from submiting
+    console.log('click');
+});  */    
+//let's do something kind of cool
+const btn = document.querySelector('.btn');
+btn.addEventListener('click', (e) =>{
+    e.preventDefault();//to stop from submiting
+    document.querySelector('#my-form').style.background = '#ccc';//when clicking on submit, the background of the form will change to #ccc
+         
+    
+}); 
+//look up in the MDN events 
+
+/*************************************final project***********************************/
+const myform = document.querySelector('#my-form');
+const nameInput = document.querySelector('#name');
+const emailInput = document.querySelector('#email');
+const msg = document.querySelector('.msg');
+const userlist = document.querySelector('#users');
+//the above part is to select/grab infos from the html document
+myform.addEventListener('submit', onSubmit);
+//to save the infos entered 
+
+function onSubmit(e){ //e is an event parameter
+    e.preventDefault();
+
+
+    if(nameInput.value === '' || emailInput.value === ''){
+        //alert('Pleas enter fields');//alert are not really functional and ugl so we use the following
+        msg.classList.add('error');
+        msg.innerHTML = 'Please enter all fields';
+         
+
+        setTimeout(() => msg.remove(), 3000);//set a time for the msg to disapear
+    }else {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(`${nameInput.value}:${emailInput.value}`));
+        userlist.appendChild(li);
+
+
+        //clear fields forms after the data is entered
+        nameInput.value = '';
+        emailInput.value ='';
+    }//this if statement to let the user know if their infos registered
+}
+
+//to grab that info and show it on the console
+
+
+
+/* shit to look up
+
+1.event parameter 
+2.methodes
+3.DOM
+4.objects 
+5.events
+6.different syntax
+7.$ meaning in javascript
+8.arrow function =>
+
+
+*/
+
+
+
+
+
+
+watch another js course 
+watch the parts that confuse you
+make something in js daily
+
+
+++++++++++++++++++++++finished  =)++++++++++++++++++++++++++++++++++
+
+//programming with mosh 
+
+for the web, javascript works in browsers
+for the programms, js works in node
+
+
+
+variables are used in almost all programming languages 
+think of variables as boxes that store data in.
+can't start a var name with a number or have them contain space 
+Firstname and firstName are different variables because js is case sensitive
+  we call data types : primitive types too
+    
+/////////////we have 2 types of languages ////////////////////
+ 1.dynamic
+   1.2 a type of var can change 
+      1.3 you can change a string var to a number.
+ 2.static
+   2.2 a type of var can't change 
+    
+
+
+         refernce types: objects, arrays and functions.
+ /*********** objects ******************/
+
+
+they make our code cleaner.
+ objects in js are the same as objects in real life.
+
+    like a human got : name, nationality, race, job ...
+multiple related variables = objects
+    example of objects in js:
+         let person = {
+           name : 'youness',
+           knia : 'Asserare',
+           age  : 18,
+           job  : 'programmer'
+         }
+
+
+     how to change data in objects 
+        person.name = 'anas';
+
+           /*********** arrays ******************/
+           [] is what we call array literals
+
+
+ /******** types of functions *****************/
+
+ 
+           
